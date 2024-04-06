@@ -1,4 +1,4 @@
-# Mirror your starred Github repos to a Gitea organization
+# Mirror your starred and public Github repos to a private Git(tea) organization
 
 ### Inspiration for this script:
 
@@ -6,6 +6,9 @@
 
 
 ## Usage
+
+Create one or two organiations in gittea, e.g. starred and personal or just one mirror organisation.
+Create an application token to use as Access_token
 
 The script runs forever, every 12 hours it executes API calls to retrieve either your starred or public repositories and mirrors them to your local gitea( or forks from this project) server.
 
