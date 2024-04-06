@@ -12,7 +12,7 @@ Using [[https://github.com/][GitHub]] user =juergenhoetzel= and Gitea organizati
 
 #+BEGIN_SRC bash
   export ACCESS_TOKEN=3a765a661619136db92aa267d90c457573x98812
-  export GITEA_URL=http://gitea.fritz.box:3000
+  export LOCAL_GIT_URL=http://gitea.fritz.box:3000
   github2gitea-mirror  juergenhoetzel githubmirror
 #+END_SRC
 
