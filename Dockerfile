@@ -4,5 +4,5 @@ ENV LOCAL_GIT_ACCESS_TOKEN=""
 ENV LOCAL_GIT_URL=""
 ENV GIT_USER=""
 ENV TARGET_ORG=""
-ENV MODDE=""
+ENV MODE=""
 CMD ["bash", "/github-git-mirror.sh", "${GIT_USER}", "${TARGET_ORG}", "${MODE}"]
