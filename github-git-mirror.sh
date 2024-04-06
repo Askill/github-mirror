@@ -47,14 +47,19 @@ create_migration_repo() {
 
 repos_to_migration() {
     for f in ${jsonoutput}/*.json; do
-	n=$(jq '.|length'<$f)
-	(( n-- ))		# last element
-	for i in $(seq 0 $n); do
-	    jq ".[$i]|.uid=${uid}|.mirror=true|.clone_addr=.clone_url|.description=.description[0:255]|.repo_name=.name|{uid,repo_name,clone_addr,description,mirror}" <$f \
-		| create_migration_repo
-	done
+        n=$(jq '.|length'<$f)
+        (( n-- ))		# last element
+        for i in $(seq 0 $n); do
+            jq ".[$i]|.uid=${uid}|.mirror=true|.clone_addr=.clone_url|.description=.description[0:255]|.repo_name=.name|{uid,repo_name,clone_addr,description,mirror}" <$f \
+            | create_migration_repo
+        done
     done
 }
 
-fetch_starred_repos
-repos_to_migration
+main(){
+    fetch_starred_repos
+    repos_to_migration
+    sleep 43100
+
+}
+while :; do main; done
